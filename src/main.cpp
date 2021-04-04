@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv) {
 
-	gStartEngine(new gApp(), "GlistApp", gBaseWindow::WINDOWMODE_APP, 800, 480);
+	gStartEngine(new gApp(), "GlistApp", gBaseWindow::WINDOWMODE_APP, 960, 540);
 
 	return 0;
 }
