@@ -9,47 +9,48 @@
 #include "GameCanvas.h"
 
 
-GameCanvas::GameCanvas(gBaseApp *root) : gBaseCanvas(root) {
+GameCanvas::GameCanvas(gApp* root) : gBaseCanvas(root) {
+	this->root = root;
 }
 
 GameCanvas::~GameCanvas() {
 }
 
 void GameCanvas::setup() {
-//	logi("GlistApp setup");
+//	gLogi("GameCanvas") << "setup";
 	logo.loadImage("gamelab-istanbul_logo_128.png");
 }
 
 void GameCanvas::update() {
-	logi("GlistApp update");
+	gLogi("GameCanvas") << "update";
 }
 
 void GameCanvas::draw() {
-	logi("GlistApp draw");
+	gLogi("GameCanvas") << "draw";
 	logo.draw((getWidth() - logo.getWidth()) / 2, (getHeight() - logo.getHeight()) / 2);
 }
 
 void GameCanvas::keyPressed(int key) {
-//	logi("GC", "keyPressed:" + gToStr(key));
+//	gLogi("GameCanvas") << "keyPressed:" << key;
 }
 
 void GameCanvas::keyReleased(int key) {
-//	logi("GC", "keyReleased:" + gToStr(key));
+//	gLogi("GameCanvas") << "keyReleased:" << key;
 }
 
 void GameCanvas::mouseMoved(int x, int y) {
-//	logi("mouseMoved x:" + gToStr(x) + ", y:" + gToStr(y));
+//	gLogi("GameCanvas") << "mouseMoved" << ", x:" << x << ", y:" << y;
 }
 
 void GameCanvas::mouseDragged(int x, int y, int button) {
-//	logi("mouseDragged x:" + gToStr(x) + ", y:" + gToStr(y) + ", b:" + gToStr(button));
+//	gLogi("GameCanvas") << "mouseDragged" << ", x:" << x << ", y:" << y << ", b:" << button;
 }
 
 void GameCanvas::mousePressed(int x, int y, int button) {
 }
 
 void GameCanvas::mouseReleased(int x, int y, int button) {
-//	logi("GC", "mouseReleased, button:" + gToStr(button));
+//	gLogi("GameCanvas") << "mouseReleased" << ", button:" << button;
 }
 
 void GameCanvas::mouseEntered() {

@@ -9,12 +9,13 @@
 #define GAMECANVAS_H_
 
 #include "gBaseCanvas.h"
+#include "gApp.h"
 #include "gImage.h"
 
 
 class GameCanvas : public gBaseCanvas {
 public:
-	GameCanvas(gBaseApp *root);
+	GameCanvas(gApp* root);
 	virtual ~GameCanvas();
 
 	void setup();
@@ -34,6 +35,7 @@ public:
 	void hideNotify();
 
 private:
+	gApp* root;
 	gImage logo;
 };
 
