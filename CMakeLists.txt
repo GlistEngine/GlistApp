@@ -1,10 +1,17 @@
 cmake_minimum_required (VERSION 3.10.2)
 
-# Set project name
+
+########## PROJECT NAME ##########
 set(APP_NAME GlistApp)
 
 
-# Do not change below
+
+########## USED PLUGINS LIST ##########
+set(PLUGINS)
+
+
+
+########## DO NOT CHANGE BELOW ##########
 set(APP_DIR ${CMAKE_SOURCE_DIR})
 project (${APP_NAME})
 
