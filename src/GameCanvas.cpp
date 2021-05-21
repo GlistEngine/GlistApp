@@ -18,7 +18,7 @@ GameCanvas::~GameCanvas() {
 
 void GameCanvas::setup() {
 //	gLogi("GameCanvas") << "setup";
-	logo.loadImage("gamelab-istanbul_logo_128.png");
+	logo.loadImage("glistengine_logo.png");
 }
 
 void GameCanvas::update() {
