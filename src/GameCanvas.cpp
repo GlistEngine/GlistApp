@@ -30,6 +30,10 @@ void GameCanvas::draw() {
 	logo.draw((getWidth() - logo.getWidth()) / 2, (getHeight() - logo.getHeight()) / 2);
 }
 
+void GameCanvas::charPressed(char key) {
+	gLogi("GameCanvas") << "keyPressed:" << key;
+}
+
 void GameCanvas::keyPressed(int key) {
 //	gLogi("GameCanvas") << "keyPressed:" << key;
 }
