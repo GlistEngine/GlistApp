@@ -1,4 +1,4 @@
-/*
+ /*
  * GameCanvas.h
  *
  *  Created on: May 6, 2020
@@ -22,7 +22,7 @@ public:
 	void update();
 	void draw();
 
-	void charPressed(char key);
+	void charPressed(unsigned int key);
 	void keyPressed(int key);
 	void keyReleased(int key);
 	void mouseMoved(int x, int y );
