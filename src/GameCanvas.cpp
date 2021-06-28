@@ -7,6 +7,8 @@
 
 
 #include "GameCanvas.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 
 GameCanvas::GameCanvas(gApp* root) : gBaseCanvas(root) {
@@ -22,16 +24,16 @@ void GameCanvas::setup() {
 }
 
 void GameCanvas::update() {
-	gLogi("GameCanvas") << "update";
+//	gLogi("GameCanvas") << "update";
 }
 
 void GameCanvas::draw() {
-	gLogi("GameCanvas") << "draw";
+//	gLogi("GameCanvas") << "draw";
 	logo.draw((getWidth() - logo.getWidth()) / 2, (getHeight() - logo.getHeight()) / 2);
 }
 
 void GameCanvas::charPressed(unsigned int key) {
-	gLogi("GameCanvas") << "keyPressed:" << key;
+//	gLogi("GameCanvas") << "charPressed:" << (char)key;
 }
 
 void GameCanvas::keyPressed(int key) {
