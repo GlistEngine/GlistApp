@@ -7,8 +7,6 @@
 
 
 #include "GameCanvas.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 
 GameCanvas::GameCanvas(gApp* root) : gBaseCanvas(root) {
