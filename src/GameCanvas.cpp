@@ -59,6 +59,10 @@ void GameCanvas::mouseReleased(int x, int y, int button) {
 //	gLogi("GameCanvas") << "mouseReleased" << ", button:" << button;
 }
 
+void GameCanvas::mouseScrolled(int x, int y) {
+//	gLogi("GameCanvas") << "mouseScrolled" << ", x:" << x << ", y:" << y;
+}
+
 void GameCanvas::mouseEntered() {
 }
 
