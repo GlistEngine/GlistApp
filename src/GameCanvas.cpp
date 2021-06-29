@@ -17,7 +17,7 @@ GameCanvas::~GameCanvas() {
 }
 
 void GameCanvas::setup() {
-//	gLogi("GameCanvas") << "setup";
+	gLogi("GameCanvas") << "setup";
 	logo.loadImage("glistengine_logo.png");
 }
 
@@ -31,7 +31,7 @@ void GameCanvas::draw() {
 }
 
 void GameCanvas::charPressed(unsigned int key) {
-	gLogi("GameCanvas") << "keyPressed:" << key;
+//	gLogi("GameCanvas") << "charPressed:" << (char)key;
 }
 
 void GameCanvas::keyPressed(int key) {
@@ -55,6 +55,10 @@ void GameCanvas::mousePressed(int x, int y, int button) {
 
 void GameCanvas::mouseReleased(int x, int y, int button) {
 //	gLogi("GameCanvas") << "mouseReleased" << ", button:" << button;
+}
+
+void GameCanvas::mouseScrolled(int x, int y) {
+//	gLogi("GameCanvas") << "mouseScrolled" << ", x:" << x << ", y:" << y;
 }
 
 void GameCanvas::mouseEntered() {
