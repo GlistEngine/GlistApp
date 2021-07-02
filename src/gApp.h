@@ -27,6 +27,7 @@
  * Critical! Only public objects can be accessed.
  */
 
+
 class gApp : public gBaseApp {
 public:
 	gApp();

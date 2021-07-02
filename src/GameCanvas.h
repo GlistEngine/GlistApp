@@ -26,6 +26,7 @@
  * A game may have its own thread for the purpose of running the game loop.
  * A typical loop will check for input, execute the game logic, and then refresh the user interface.
  */
+
 class GameCanvas : public gBaseCanvas {
 public:
 	GameCanvas(gApp *root);
