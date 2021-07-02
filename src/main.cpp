@@ -26,10 +26,15 @@
  * if the application is running.
  */
 
+
 int main(int argc, char **argv) {
 
-	gStartEngine(new gApp(), "GlistApp", gBaseWindow::WINDOWMODE_APP, 1280, 720);
+	gStartEngine(new gApp(), "GlistApp", gBaseWindow::WINDOWMODE_APP, 800, 480);
 
 	return 0;
 }
+
+
+
+
 
