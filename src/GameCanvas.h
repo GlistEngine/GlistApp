@@ -35,6 +35,7 @@
      *
      * The way we work with the computer in C++ is very linear.
      * Everything is done in the set order that we give it, and the computer does nothing for us unless we explicitly tell it to.
+     *
      * A typical loop will check for input, execute the game logic, and then refresh the user interface.
      */
 class GameCanvas : public gBaseCanvas {

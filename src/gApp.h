@@ -26,8 +26,6 @@
 	* However, in order to access the object from gApp, the class must include gApp.h.
 	* Critical! Only public objects can be accessed.
 	*/
-
-
 class gApp : public gBaseApp {
 public:
 	gApp();
