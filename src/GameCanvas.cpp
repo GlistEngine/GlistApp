@@ -30,16 +30,16 @@ void GameCanvas::draw() {
 	logo.draw((getWidth() - logo.getWidth()) / 2, (getHeight() - logo.getHeight()) / 2);
 }
 
-void GameCanvas::charPressed(unsigned int key) {
-//	gLogi("GameCanvas") << "charPressed:" << (char)key;
-}
-
 void GameCanvas::keyPressed(int key) {
 //	gLogi("GameCanvas") << "keyPressed:" << key;
 }
 
 void GameCanvas::keyReleased(int key) {
 //	gLogi("GameCanvas") << "keyReleased:" << key;
+}
+
+void GameCanvas::charPressed(unsigned int codepoint) {
+//	gLogi("GameCanvas") << "charPressed:" << gCodepointToStr(key);
 }
 
 void GameCanvas::mouseMoved(int x, int y) {
