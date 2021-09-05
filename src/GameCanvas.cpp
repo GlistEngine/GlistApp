@@ -39,7 +39,7 @@ void GameCanvas::keyReleased(int key) {
 }
 
 void GameCanvas::charPressed(unsigned int codepoint) {
-//	gLogi("GameCanvas") << "charPressed:" << gCodepointToStr(key);
+//	gLogi("GameCanvas") << "charPressed:" << gCodepointToStr(codepoint);
 }
 
 void GameCanvas::mouseMoved(int x, int y) {
