@@ -67,6 +67,9 @@ void GameCanvas::mouseEntered() {
 void GameCanvas::mouseExited() {
 }
 
+void GameCanvas::windowResized(int w, int h) {
+}
+
 void GameCanvas::showNotify() {
 
 }

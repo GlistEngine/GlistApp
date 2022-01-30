@@ -32,6 +32,7 @@ public:
 	void mouseScrolled(int x, int y);
 	void mouseEntered();
 	void mouseExited();
+	void windowResized(int w, int h);
 
 	void showNotify();
 	void hideNotify();
