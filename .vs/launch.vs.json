@@ -1,0 +1,23 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "cppdbg",
+      "name": "Run GlistApp.exe",
+      "project": "CMakeLists.txt",
+      "projectTarget": "GlistApp.exe",
+      "cwd": "${workspaceRoot}",
+      "program": "${debugInfo.target}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "${env.MINGW_BIN_ROOT}/gdb.exe"
+    },
+    {
+      "type": "default",
+      "name": "Run GlistApp.exe Without Debugger",
+      "project": "CMakeLists.txt",
+      "projectTarget": "GlistApp.exe",
+      "currentDir": "${workspaceRoot}"
+    }
+  ]
+}

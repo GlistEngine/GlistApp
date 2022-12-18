@@ -1,0 +1,94 @@
+﻿{
+  "environments": [
+    {
+      "ZBIN_ROOT": "C:/dev/glist/zbin/glistzbin-win64",
+      "PROJECT_DIR": "${projectDir}",
+      "MINGW_ROOT": "${env.ZBIN_ROOT}/mingw64",
+      "MINGW_BIN_ROOT": "${env.MINGW_ROOT}/bin",
+      "CMAKE_ROOT": "${env.ZBIN_ROOT}/CMake",
+      "CMAKE_BIN_ROOT": "${env.CMAKE_ROOT}/bin"
+    }
+  ],
+  "configurations": [
+    {
+      "name": "GlistApp Release",
+      "generator": "MinGW Makefiles",
+      "configurationType": "Release",
+      "buildRoot": "${projectDir}\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "all",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [
+        "mingw_64"
+      ],
+      "environments": [
+        {
+          "FLAVOR": "x86_64-w64-mingw32",
+          "TOOLSET_VERSION": "9.1.0",
+          "PATH": "${env.MINGW_ROOT}/bin;${env.MINGW_ROOT}/../usr/local/bin;${env.MINGW_ROOT}/../usr/bin;${env.MINGW_ROOT}/../bin;${env.PATH}",
+          "INCLUDE": "${env.INCLUDE};${env.MINGW_ROOT}/include/c++/${env.TOOLSET_VERSION};${env.MINGW_ROOT}/include/c++/${env.TOOLSET_VERSION}/tr1;${env.MINGW_ROOT}/include/c++/${env.TOOLSET_VERSION}/${env.FLAVOR}",
+          "environment": "mingw_64"
+        }
+      ],
+      "variables": [
+        {
+          "name": "CMAKE_C_COMPILER",
+          "value": "${env.MINGW_BIN_ROOT}/gcc.exe",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_COMPILER",
+          "value": "${env.MINGW_BIN_ROOT}/g++.exe",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_MAKE_PROGRAM",
+          "value": "${env.MINGW_BIN_ROOT}/mingw32-make.exe",
+          "type": "STRING"
+        }
+      ],
+      "cmakeExecutable": "${env.CMAKE_BIN_ROOT}/cmake.exe"
+    },
+    {
+      "name": "GlistApp Debug",
+      "generator": "MinGW Makefiles",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "all",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [
+        "mingw_64"
+      ],
+      "environments": [
+        {
+          "FLAVOR": "x86_64-w64-mingw32",
+          "TOOLSET_VERSION": "9.1.0",
+          "PATH": "${env.MINGW_ROOT}/bin;${env.MINGW_ROOT}/../usr/local/bin;${env.MINGW_ROOT}/../usr/bin;${env.MINGW_ROOT}/../bin;${env.PATH}",
+          "INCLUDE": "${env.INCLUDE};${env.MINGW_ROOT}/include/c++/${env.TOOLSET_VERSION};${env.MINGW_ROOT}/include/c++/${env.TOOLSET_VERSION}/tr1;${env.MINGW_ROOT}/include/c++/${env.TOOLSET_VERSION}/${env.FLAVOR}",
+          "environment": "mingw_64"
+        }
+      ],
+      "variables": [
+        {
+          "name": "CMAKE_C_COMPILER",
+          "value": "${env.MINGW_BIN_ROOT}/gcc.exe",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_COMPILER",
+          "value": "${env.MINGW_BIN_ROOT}/g++.exe",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_MAKE_PROGRAM",
+          "value": "${env.MINGW_BIN_ROOT}/mingw32-make.exe",
+          "type": "STRING"
+        }
+      ],
+      "cmakeExecutable": "${env.CMAKE_BIN_ROOT}/cmake.exe"
+    }
+  ]
+}
