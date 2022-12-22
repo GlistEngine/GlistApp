@@ -43,7 +43,7 @@ add_executable(${APP_NAME}
 
 include_directories(${APP_NAME} PRIVATE
                         ${APP_DIR}/src)
-
+                        
 # add lib dependencies
 target_link_libraries(${APP_NAME}
                       GlistEngine)
