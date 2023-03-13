@@ -12,6 +12,9 @@
 gApp::gApp() {
 }
 
+gApp::gApp(int argc, char **argv) : gBaseApp(argc, argv) {
+}
+
 gApp::~gApp() {
 }
 
