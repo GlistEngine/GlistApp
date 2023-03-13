@@ -15,23 +15,23 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildProperties="" description="Release" id="cdt.managedbuild.toolchain.gnu.cross.base.1466761803" name="Release" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=" parent="org.eclipse.cdt.build.core.emptycfg">
+				<configuration artifactName="${ProjName}" buildProperties="" description="Release" id="cdt.managedbuild.toolchain.gnu.cross.base.1466761803" name="Release" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="org.eclipse.cdt.build.core.emptycfg">
 					<folderInfo id="cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362" name="/" resourcePath="">
-						<toolChain id="de.marw.cmake.cdt.lsp.toolchain.cmake.114048391" name="CMake driven" superClass="de.marw.cmake.cdt.lsp.toolchain.cmake">
-							<targetPlatform id="de.marw.cmake.cdt.lsp.targetPlatform.cmake.594588774" name="Any Platform" superClass="de.marw.cmake.cdt.lsp.targetPlatform.cmake"/>
-							<builder buildPath="/GlistApp/build/Release" id="de.marw.cmake.cdt.lsp.builder.portable.1982520158" keepEnvironmentInBuildfile="false" name="CMake Builder" parallelBuildOn="false" superClass="de.marw.cmake.cdt.lsp.builder.portable"/>
-							<tool id="de.marw.cmake.cdt.lsp.toolchain.tool.dummy.1129232605" name="CMake driven Languages Proxy" superClass="de.marw.cmake.cdt.lsp.toolchain.tool.dummy">
-								<inputType id="de.marw.cmake.cdt.lsp.inputType.c.1963174959" superClass="de.marw.cmake.cdt.lsp.inputType.c"/>
-								<inputType id="de.marw.cmake.cdt.lsp.inputType.cpp.1019322395" superClass="de.marw.cmake.cdt.lsp.inputType.cpp"/>
+						<toolChain id="cmake4eclipse.mbs.toolchain.cmake.1134224378" name="CMake driven" superClass="cmake4eclipse.mbs.toolchain.cmake">
+							<targetPlatform id="cmake4eclipse.mbs.targetPlatform.cmake.19164171" name="Any Platform" superClass="cmake4eclipse.mbs.targetPlatform.cmake"/>
+							<builder buildPath="/GlistApp/build/Release" id="cmake4eclipse.mbs.builder.1573338402" keepEnvironmentInBuildfile="false" name="CMake Builder" superClass="cmake4eclipse.mbs.builder"/>
+							<tool id="cmake4eclipse.mbs.toolchain.tool.dummy.1691408187" name="CMake" superClass="cmake4eclipse.mbs.toolchain.tool.dummy">
+								<inputType id="cmake4eclipse.mbs.inputType.c.73740170" superClass="cmake4eclipse.mbs.inputType.c"/>
+								<inputType id="cmake4eclipse.mbs.inputType.cpp.563052803" superClass="cmake4eclipse.mbs.inputType.cpp"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
-				<externalSettings containerId="GlistEngine;cdt.managedbuild.toolchain.gnu.cross.base.1459255674" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+				<externalSettings containerId="GlistEngine;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
 			</storageModule>
-			<storageModule buildDir="build/${ConfigName}" dirtyTs="0" moduleId="de.marw.cmake4eclipse.mbs.settings">
+			<storageModule buildDir="_build/${ConfigName}" dirtyTs="0" moduleId="de.marw.cmake4eclipse.mbs.settings">
 				<options/>
 			</storageModule>
 			<storageModule buildDir="build/${ConfigName}" moduleId="de.marw.cdt.cmake.core.settings">
@@ -111,16 +111,19 @@
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cdt.managedbuild.tool.gnu.c.compiler.base.1661167020;cdt.managedbuild.tool.gnu.c.compiler.input.1365419019">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;de.marw.cmake.cdt.lsp.toolchain.tool.dummy.1129232605;de.marw.cmake.cdt.lsp.inputType.cpp.1019322395">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cmake4eclipse.mbs.toolchain.tool.dummy.1691408187;cmake4eclipse.mbs.inputType.cpp.563052803">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cdt.managedbuild.tool.gnu.cpp.compiler.base.620564638;cdt.managedbuild.tool.gnu.cpp.compiler.input.607838422">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cdt.managedbuild.tool.gnu.cross.cpp.compiler.2038370412;cdt.managedbuild.tool.gnu.cpp.compiler.input.439050039">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cdt.managedbuild.tool.gnu.cross.cpp.compiler.36572443;cdt.managedbuild.tool.gnu.cpp.compiler.input.1184553328">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1745650362;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1745650362.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1165570668;cdt.managedbuild.tool.gnu.cpp.compiler.input.433924850">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;de.marw.cmake.cdt.lsp.toolchain.tool.dummy.1129232605;de.marw.cmake.cdt.lsp.inputType.c.1963174959">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1745650362;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1745650362.;cdt.managedbuild.tool.gnu.cross.c.compiler.1033068833;cdt.managedbuild.tool.gnu.c.compiler.input.1776388672">
@@ -129,10 +132,19 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cdt.managedbuild.tool.gnu.cross.c.compiler.804246542;cdt.managedbuild.tool.gnu.c.compiler.input.1720809240">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cmake4eclipse.mbs.toolchain.tool.dummy.1691408187;cmake4eclipse.mbs.inputType.c.73740170">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cdt.managedbuild.tool.gnu.cross.cpp.compiler.2038370412;cdt.managedbuild.tool.gnu.cpp.compiler.input.439050039">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1745650362;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1745650362.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1165570668;cdt.managedbuild.tool.gnu.cpp.compiler.input.433924850">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cdt.managedbuild.tool.gnu.cross.c.compiler.384388851;cdt.managedbuild.tool.gnu.c.compiler.input.609338441">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cdt.managedbuild.tool.gnu.cross.cpp.compiler.36572443;cdt.managedbuild.tool.gnu.cpp.compiler.input.1184553328">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.cross.base.1466761803;cdt.managedbuild.toolchain.gnu.cross.base.1466761803.1461665362;cdt.managedbuild.tool.gnu.c.compiler.base.1661167020;cdt.managedbuild.tool.gnu.c.compiler.input.1365419019">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
