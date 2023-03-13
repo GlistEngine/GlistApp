@@ -20,7 +20,7 @@ if(NOT DEFINED CMAKE_SUPPRESS_DEVELOPER_WARNINGS)
 endif()
 
 set(TOP_DIR ${APP_DIR}/../..)
-set(MAIN_DIR ${TOP_DIR}/glistengine)
+set(MAIN_DIR ${TOP_DIR}/GlistEngine)
 set(ENGINE_DIR ${MAIN_DIR}/engine)
 
 include(${ENGINE_DIR}/CMakeLists.txt)

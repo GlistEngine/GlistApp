@@ -14,6 +14,7 @@
 class gApp : public gBaseApp {
 public:
 	gApp();
+	gApp(int argc, char **argv);
 	~gApp();
 
 	void setup();

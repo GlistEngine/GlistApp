@@ -21,7 +21,7 @@
 
 int main(int argc, char **argv) {
 
-	gStartEngine(new gApp(), "GlistApp", G_WINDOWMODE_APP, 960, 540);
+	gStartEngine(new gApp(argc, argv), "GlistApp", G_WINDOWMODE_APP, 960, 540);
 
 	return 0;
 }
