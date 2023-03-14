@@ -1,8 +1,11 @@
 cmake_minimum_required (VERSION 3.10.2)
 
 if(WIN32)
+set(COMPILER_CLANG true)
+if(COMPILER_CLANG)
 	set(CMAKE_C_COMPILER "${CMAKE_SOURCE_DIR}/../../zbin/glistzbin-win64/clang64/bin/clang.exe")
 	set(CMAKE_CXX_COMPILER "${CMAKE_SOURCE_DIR}/../../zbin/glistzbin-win64/clang64/bin/clang++.exe")
+endif(COMPILER_CLANG)
 endif(WIN32)
 
 
