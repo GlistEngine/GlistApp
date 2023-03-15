@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.10.2)
 if(WIN32)
 # Clang compiler definition for Windows. Do not change this value for other OS.
 # For UNIX like systems, configure the compiler via OS.
-set(COMPILER_CLANG true)
+set(COMPILER_CLANG false)
 
 if(COMPILER_CLANG)
 	set(CMAKE_C_COMPILER "${CMAKE_SOURCE_DIR}/../../zbin/glistzbin-win64/clang64/bin/clang.exe")
