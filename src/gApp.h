@@ -5,8 +5,8 @@
  *      Author: noyan
  */
 
-#ifndef EXAMPLES_TESTEXAMPLE_GAPP_H_
-#define EXAMPLES_TESTEXAMPLE_GAPP_H_
+#ifndef GAPP_H_
+#define GAPP_H_
 
 #include "gBaseApp.h"
 
@@ -21,4 +21,4 @@ public:
 	void update();
 };
 
-#endif /* EXAMPLES_TESTEXAMPLE_GAPP_H_ */
+#endif /* GAPP_H_ */
