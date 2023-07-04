@@ -9,20 +9,6 @@ set(APP_NAME GlistApp)
 set(PLUGINS)
 
 
-# MAC devs, please check OpenSSL versions after installing them via Homebrew,
-# and write their version codes here
-# M1 and M2 folder to check OpenSSL version code: /opt/homebrew/Cellar/openssl@1.1
-# x86_64 folder to check OpenSSL version code:    /usr/local/Cellar/openssl@1.1
-if(APPLE)
-	set(OPENSSL_VER_SHORT "1.1")
-	set(OPENSSL_VER_FULL "1.1.1t")
-	
-	# M1 and M2 devs should also check LLVM version in /opt/homebrew/Cellar/llvm
-	# and write its version below
-	set(LLVM_VER "16.0.0")
-endif()
-
-
 ##################################################
 # DO NOT CHANGE BELOW
 ##################################################
@@ -52,17 +38,19 @@ if(NOT ${DEVICEARCHITECTURE} STREQUAL "arm64")
 	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS} -march=x86-64")
 	set(SYS_NAME "macos-x86_64")
 	set(SYS_PATH "/usr/local")
-	set(BREW_PATH "${SYS_PATH}/Cellar")
+	set(BREW_PATH "${SYS_PATH}/opt")
 	set(SYS_INC_PATH "${SYS_PATH}/include")
-	set(CMAKE_C_COMPILER "/usr/local/bin/gcc-12")
-	set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-12")
+	set(CMAKE_C_COMPILER "/usr/local/bin/clang")
+	set(CMAKE_CXX_COMPILER "/usr/local/bin/clang++")
+	set(ENGINE_USE_SYMLINKS ON)
 else()
 	set(SYS_NAME "macos")
 	set(SYS_PATH "/opt/homebrew")
-	set(BREW_PATH "${SYS_PATH}/Cellar")
+	set(BREW_PATH "${SYS_PATH}/opt")
 	set(SYS_INC_PATH "${SYS_PATH}/include")
-	set(CMAKE_C_COMPILER "${BREW_PATH}/llvm/${LLVM_VER}/bin/clang")
-	set(CMAKE_CXX_COMPILER "${BREW_PATH}/llvm/${LLVM_VER}/bin/clang++")
+	set(CMAKE_C_COMPILER "${BREW_PATH}/llvm/bin/clang")
+	set(CMAKE_CXX_COMPILER "${BREW_PATH}/llvm/bin/clang++")
+	set(ENGINE_USE_SYMLINKS ON)
 endif()
 endif(APPLE)
 
