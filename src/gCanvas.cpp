@@ -17,16 +17,13 @@ gCanvas::~gCanvas() {
 }
 
 void gCanvas::setup() {
-	gLogi("gCanvas") << "setup";
 	logo.loadImage("glistengine_logo.png");
 }
 
 void gCanvas::update() {
-	gLogi("gCanvas") << "update";
 }
 
 void gCanvas::draw() {
-	gLogi("gCanvas") << "draw";
 	logo.draw((getWidth() - logo.getWidth()) / 2, (getHeight() - logo.getHeight()) / 2);
 }
 
@@ -51,6 +48,7 @@ void gCanvas::mouseDragged(int x, int y, int button) {
 }
 
 void gCanvas::mousePressed(int x, int y, int button) {
+//	gLogi("gCanvas") << "mousePressed" << ", x:" << x << ", y:" << y << ", b:" << button;
 }
 
 void gCanvas::mouseReleased(int x, int y, int button) {
