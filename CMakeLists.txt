@@ -70,7 +70,7 @@ set(MAIN_DIR ${TOP_DIR}/GlistEngine)
 set(ENGINE_DIR ${MAIN_DIR}/engine)
 
 if(APPLE)
-	add_subdirectory(${ENGINE_DIR} ./build)
+	add_subdirectory(${ENGINE_DIR} ./_build)
 else()
 	include(${ENGINE_DIR}/CMakeLists.txt)
 endif()
