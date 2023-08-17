@@ -4,6 +4,9 @@ else()
 	cmake_minimum_required (VERSION 3.10.2)
 endif()
 
+set(GLIST_CXX_STANDARD 14)
+set(GLIST_CXX_STANDARD_REQUIRED True)
+
 ########## PROJECT NAME ##########
 set(APP_NAME GlistApp)
 
@@ -103,8 +106,8 @@ endif()
 set_target_properties(
     ${APP_NAME}
         PROPERTIES
-            CXX_STANDARD 14
-            CXX_STANDARD_REQUIRED True
+            CXX_STANDARD ${GLIST_CXX_STANDARD}
+            CXX_STANDARD_REQUIRED ${GLIST_CXX_STANDARD_REQUIRED}
 )
 
 if(APPLE)
@@ -112,7 +115,7 @@ if(APPLE)
 	    ${APP_NAME}
 	        PRIVATE
 	            ${APP_DIR}/src
-	            ${BREW_PATH}/llvm@15/include/c++/v1
+	            ${BREW_PATH}/llvm/include/c++/v1
 	)
 else()
 	include_directories(${APP_NAME} PRIVATE
