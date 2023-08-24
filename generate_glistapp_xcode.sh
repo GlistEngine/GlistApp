@@ -1,7 +1,7 @@
 #!/bin/sh
 
-export CC="/opt/homebrew/opt/llvm@15/bin/clang"
-export CXX="/opt/homebrew/opt/llvm@15/bin/clang++"
+export CC="/opt/homebrew/opt/llvm/bin/clang"
+export CXX="/opt/homebrew/opt/llvm/bin/clang++"
 
 BINARY_DIR="./../../zbin/glistzbin-macos/mingw64/lib"
 BUILD_TYPE="Debug"
