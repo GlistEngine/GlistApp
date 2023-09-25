@@ -80,28 +80,21 @@ endif()
 
 ########## SOURCE FILES AND INCLUDE DIRECTORIES ##########
 
-if(APPLE)
-	set(GlistApp_SOURCES
+set(GlistApp_SOURCES
 		${APP_DIR}/src/main.cpp
 		${APP_DIR}/src/gApp.cpp
 		${APP_DIR}/src/gCanvas.cpp
-	)
-	
-	set(GlistApp_HEADERS
+)
+
+set(GlistApp_HEADERS
 		${APP_DIR}/src/gApp.h
 		${APP_DIR}/src/gCanvas.h
-	)
-	
-	add_executable(${APP_NAME}
-	                ${GlistApp_SOURCES}
-	                ${GlistApp_HEADERS}
-	)
-else()
-	add_executable(${APP_NAME} 
-				${APP_DIR}/src/main.cpp
-				${APP_DIR}/src/gApp.cpp
-				${APP_DIR}/src/gCanvas.cpp)
-endif()
+)
+
+add_executable(${APP_NAME}
+		${GlistApp_SOURCES}
+		${GlistApp_HEADERS}
+)
 
 set_target_properties(
     ${APP_NAME}
