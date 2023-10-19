@@ -1,6 +1,10 @@
 #!/bin/sh
 
-source scripts/ios-secret.sh
+BINARY_DIR="$HOME/dev/glist/zbin/glistzbin-macos/mingw64/lib"
+GLISTWD="$(pwd)/.."
+BUILD_DIR="$GLISTWD/_build"
+
+source ios-secret.sh
 
 # EXPOSED VARIABLES (CAN CHANGE)
 BUILD_TYPE="Debug"
@@ -15,19 +19,23 @@ export CXX="/opt/homebrew/opt/llvm/bin/clang++"
 export OBJC="/opt/homebrew/opt/llvm/bin/clang"
 export OBJCXX="/opt/homebrew/opt/llvm/bin/clang++"
 
-BINARY_DIR="./../../zbin/glistzbin-macos/mingw64/lib"
-GLISTWD="$(pwd)"
-BUILD_DIR="$GLISTWD/_build"
-
-cmake -S . \
--D CMAKE_TOOLCHAIN_FILE="$GLISTWD/cmake/ios.toolchain.cmake" \
+if [ $1 = "ios" ]
+then
+cmake -S "$GLISTWD" \
+-D CMAKE_TOOLCHAIN_FILE="$GLISTWD/macos/ios.toolchain.cmake" \
 -G Xcode \
--B _build \
+-B "$GLISTWD/_build" \
 -D PLATFORM=$PLATFORM \
 -D DEPLOYMENT_TARGET=$DEPLOYMENT_VERSION \
 -D GLIST_IOS_DEVELOPMENT_TEAM=$GLIST_IOS_DEVELOPMENT_TEAM \
 -D GLIST_IOS_PRODUCT_BUNDLE_IDENTIFIER=$GLIST_IOS_PRODUCT_BUNDLE_IDENTIFIER \
 -D GLIST_IOS_PRODUCT_NAME=$GLIST_IOS_PRODUCT_NAME
+elif [ $1 = "macos" ]
+then
+cmake -S "$GLISTWD" \
+-G Xcode \
+-B "$GLISTWD/_build"
+fi
 
 xattr -w com.apple.quarantine "$(xattr -p com.apple.quarantine "$BINARY_DIR/libfmod.dylib" | sed 's/^.\{4\}/00c1/')" $BINARY_DIR/libfmod.dylib
 xattr -w com.apple.quarantine "$(xattr -p com.apple.quarantine "$BINARY_DIR/libfmodL.dylib" | sed 's/^.\{4\}/00c1/')" $BINARY_DIR/libfmodL.dylib
