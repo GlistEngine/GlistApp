@@ -1,18 +1,18 @@
 if(APPLE)
-	cmake_minimum_required (VERSION 3.26)
+	cmake_minimum_required (VERSION 3.27)
 else()
 	cmake_minimum_required (VERSION 3.10.2)
 endif()
 
-set(GLIST_CXX_STANDARD 14)
-set(GLIST_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 ########## PROJECT NAME ##########
 set(APP_NAME GlistApp)
 
 
 ########## USED PLUGINS LIST ##########
-set(PLUGINS)
+set(PLUGINS gipIOS)
 
 
 ##################################################
@@ -63,10 +63,25 @@ else()
 endif()
 endif(APPLE)
 
+if(IOS)
+	set(CMAKE_XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER ${GLIST_IOS_PRODUCT_BUNDLE_IDENTIFIER})
+	set(CMAKE_XCODE_ATTRIBUTE_PRODUCT_NAME ${GLIST_IOS_PRODUCT_NAME})
+	set(CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_STYLE "AUTOMATIC")
+	set(CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM ${GLIST_IOS_DEVELOPMENT_TEAM})
+
+	add_compile_definitions(GLES_SILENCE_DEPRECATION)
+endif()
+
 
 ########## PATHS AND VARIABLES ##########
 set(APP_DIR ${CMAKE_SOURCE_DIR})
 project (${APP_NAME})
+
+enable_language(CXX)
+enable_language(C)
+if(IOS)
+	enable_language(OBJCXX)
+endif()
 
 set(TOP_DIR ${APP_DIR}/../..)
 set(MAIN_DIR ${TOP_DIR}/GlistEngine)
@@ -96,12 +111,51 @@ add_executable(${APP_NAME}
 		${GlistApp_HEADERS}
 )
 
-set_target_properties(
-    ${APP_NAME}
-        PROPERTIES
-            CXX_STANDARD ${GLIST_CXX_STANDARD}
-            CXX_STANDARD_REQUIRED ${GLIST_CXX_STANDARD_REQUIRED}
-)
+######### APPLE AND IOS SPECIFIC SETTINGS #########
+
+if(IOS)
+	if(PLUGINS MATCHES "^.*gipIOS.*$")
+		include(${TOP_DIR}/glistplugins/gipIOS/CMakeLists.txt)
+	endif()
+
+	set_source_files_properties(macos/GlistApp.storyboard PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+	target_sources(${APP_NAME}
+		PRIVATE 
+			${APP_DIR}/macos/GlistApp.storyboard
+			${IOS_PLUGIN_HEADERS}
+			${IOS_PLUGIN_SRCS}
+	)
+
+	target_include_directories(${APP_NAME} PRIVATE ${IOS_PLUGIN_INCLUDES})
+	target_include_directories(GlistEngine PRIVATE ${IOS_PLUGIN_INCLUDES})
+	target_link_libraries(${APP_NAME} PRIVATE ${IOS_PLUGIN_LINKLIBS})
+
+	set_target_properties(${APP_NAME}
+		PROPERTIES
+			XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER ${GLIST_IOS_PRODUCT_BUNDLE_IDENTIFIER}
+			XCODE_ATTRIBUTE_PRODUCT_NAME 			  ${GLIST_IOS_PRODUCT_NAME}
+			XCODE_ATTRIBUTE_CODE_SIGN_STYLE           "AUTOMATIC"
+			XCODE_ATTRIBUTE_DEVELOPMENT_TEAM          ${GLIST_IOS_DEVELOPMENT_TEAM}
+			XCODE_ATTRIBUTE_TARGETED_DEVICE_FAMILY    "1,2"
+	)
+
+	#Put assets to the Resources folder of the bundle
+	file(GLOB_RECURSE RESOURCES "${CMAKE_CURRENT_SOURCE_DIR}/assets/*")
+
+	target_sources(${APP_NAME} PRIVATE ${RESOURCES})
+
+	foreach (FILE ${RESOURCES})
+		file(RELATIVE_PATH NEW_FILE "${CMAKE_CURRENT_SOURCE_DIR}/assets" ${FILE})
+		get_filename_component(NEW_FILE_PATH ${NEW_FILE} DIRECTORY)
+		set_property(SOURCE ${FILE} PROPERTY MACOSX_PACKAGE_LOCATION "Resources/${NEW_FILE_PATH}")
+		source_group("Resources/${NEW_FILE_PATH}" FILES "${FILE}")
+	endforeach ()
+
+	set_property(
+		TARGET ${APP_NAME}
+		PROPERTY MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/macos/Info.plist
+	)
+endif()
 
 if(APPLE)
 	target_include_directories(
