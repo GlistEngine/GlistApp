@@ -10,7 +10,7 @@ Please clone this repo under glist/myglistapps in your GlistEngine installation 
 
 - If you do not have Xcode, download and install before continuing the guide.
 
-- After cloning into the right directory, navigate to `~/dev/glist/myglistapps/GlistApp/macos` from your terminal.
+- After cloning into the right directory, navigate to `~/dev/glist/myglistapps/GlistApp/_macos` from your terminal.
 
 - From here, run command:
 
