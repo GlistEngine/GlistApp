@@ -1,4 +1,5 @@
 # GlistApp
+
 App project template for [GlistEngine](https://github.com/GlistEngine/GlistEngine)
 
 Developers can clone this repository to initialize a new GlistEngine game project. More information can be found on the [readme](https://github.com/GlistEngine/GlistEngine/blob/main/README.md) page of GlistEngine repository.
@@ -9,9 +10,13 @@ Please clone this repo under glist/myglistapps in your GlistEngine installation 
 
 - If you do not have Xcode, download and install before continuing the guide.
 
-- After cloning into the right directory, please run the "generate_glistapp_xcode.sh" with the following command in commandline
+- After cloning into the right directory, navigate to `~/dev/glist/myglistapps/GlistApp/macos` from your terminal.
 
-  `sh generate_glistapp_xcode.sh`
+- From here, run command:
+
+  `sh generate_glistapp_xcode.sh macos`
+  
+  The IOS specific instructions can be found in gipIOS plugin. 
 
 - When Xcode opens the project, click on ALL_BUILD where it says `ALL_BUILD > My Mac` at the top center of the Xcode screen and select `GlistApp`.
 
