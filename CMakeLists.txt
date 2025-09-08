@@ -1,8 +1,5 @@
 cmake_minimum_required (VERSION 3.10.2)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-
 ########## PROJECT NAME ##########
 set(APP_NAME GlistApp)
 
@@ -11,9 +8,19 @@ set(APP_NAME GlistApp)
 set(PLUGINS)
 
 
-##################################################
-# DO NOT CHANGE BELOW
-##################################################
+########## CPP VERSION ##########
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+
+########## ENGINE BUILDING (SHARED / STATIC) (CHANGE TO STATIC IF REALLY NEEDED) ##########
+set(BUILD_TYPE SHARED)
+
+
+
+################################################################
+# DO NOT CHANGE ANYTHING BELOW UNLESS YOU KNOW WHAT YOU DO
+################################################################
 
 ########## CMAKE THING ##########
 if(NOT DEFINED CMAKE_SUPPRESS_DEVELOPER_WARNINGS)
