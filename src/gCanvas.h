@@ -2,7 +2,7 @@
  * gCanvas.h
  *
  *  Created on: May 6, 2020
- *      Author: noyan
+ *      Author: Noyan Culum
  */
 
 #ifndef GCANVAS_H_
