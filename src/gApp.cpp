@@ -2,7 +2,7 @@
  * gApp.cpp
  *
  *  Created on: May 6, 2020
- *      Author: noyan
+ *      Author: Noyan Culum
  */
 
 #include "gApp.h"
