@@ -56,8 +56,6 @@ if(APPLE)
 	endif()
 	set(BREW_PATH "${SYS_PATH}/opt")
 	set(SYS_INC_PATH "${SYS_PATH}/include")
-	set(CMAKE_C_COMPILER "${BREW_PATH}/llvm/bin/clang")
-	set(CMAKE_CXX_COMPILER "${BREW_PATH}/llvm/bin/clang++")
 	set(ENGINE_USE_SYMLINKS ON)
 endif(APPLE)
 
@@ -172,7 +170,6 @@ if(APPLE)
 	    ${APP_NAME}
 	        PRIVATE
 	            ${APP_DIR}/src
-	            ${BREW_PATH}/llvm/include/c++/v1
 	)
 else()
 	include_directories(${APP_NAME} PRIVATE
