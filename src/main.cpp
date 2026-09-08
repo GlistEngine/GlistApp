@@ -24,6 +24,15 @@ void androidMain() {
 	gStartEngine(new gApp(), "GlistApp", G_WINDOWMODE_APP, 720, 1280);
 }
 #else
+
+//You can disable for GUI G_WINDOWMODE_APP
+#if defined(WIN32)
+    	extern "C" {
+    	__declspec(dllexport) unsigned long NvOptimusEnablement = 0x00000001;
+    	__declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
+    	}
+#endif
+
 int main(int argc, char **argv) {
 
 	gStartEngine(new gApp(argc, argv), "GlistApp", G_WINDOWMODE_APP, 1280, 720);
